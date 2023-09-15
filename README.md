@@ -1,7 +1,27 @@
-# Vue 3 + Vite
+# @osaxyz/tooltip
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## インストール
 
-## Recommended IDE Setup
+`npm install @osaxyz/tooltip`
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## どう動くか
+
+ツールチップを表示したいDOMを、`ToolTip`コンポーネントの入れ子にして下さい。自動的に、`message`Propsで渡した文字列が、その要素にホバーした際にマウスに追従して現れるようになります。
+
+## 使い方
+
+1. `@osaxyz/tooltip`から`ToolTip`をインポートします・
+2. 必要であれば、`@osaxyz/tooltip/dist/style.css`をインポートします。カスタムスタイルを適用したい場合、`.osa-tooltip_message`クラスへのアクセスが可能です。
+3. `ToolTip`コンポーネントへ`message`（String）Propsを渡して下さい。
+
+```js
+import ToolTip from '@osaxyz/tooltip'
+import '@osaxyz/tooltip/dist/style.css'
+```
+
+```html
+<ToolTip message="Hoge">
+    <YourCustomElements>
+    ...
+</ToolTip>
+```
